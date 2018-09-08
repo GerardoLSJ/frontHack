@@ -23,6 +23,8 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../env/environment';
+import { NewProcedurePage } from '../pages/new-procedure/new-procedure';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { environment } from '../env/environment';
     ProfilePage, 
     AgendaDetailPage, 
     NewPostPage,
-    LoginPage
+    LoginPage,
+    NewProcedurePage
   ],
   imports: [
     BrowserModule,
@@ -56,7 +59,8 @@ import { environment } from '../env/environment';
     ProfilePage, 
     AgendaDetailPage, 
     NewPostPage,
-    LoginPage
+    LoginPage,
+    NewProcedurePage
   ],
   providers: [
     StatusBar,
