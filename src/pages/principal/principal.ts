@@ -54,4 +54,16 @@ export class PrincipalPage {
     this.navCtrl.push(NewPostPage)
   }
 
+  openLey(){
+
+  }
+
+
+  openAgenda(){
+
+  }
+
+  openTramite(){
+    
+  }
 }

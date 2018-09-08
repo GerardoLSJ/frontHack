@@ -23,11 +23,35 @@
       <div class="card-title">{{tag.title}}</div>
     </ion-card>
 
-    <ion-fab>
-        <button ion-fab color="primary" (click)="newPost()">
-          <ion-icon name="add"></ion-icon>
-        </button>
-    </ion-fab>
-      
+    <ion-fab right bottom>
+        <button ion-fab color="secondary"><ion-icon name="add"></ion-icon></button>
+        <ion-fab-list side="top">
+            <button ion-fab  (click)="openTramite()">
+              <ion-icon name="checkmark-circle"></ion-icon> 
+              <ion-label>Tramite</ion-label>
+            </button>
+            <button ion-fab (click)="openLey()">
+              <ion-icon name="document"></ion-icon>
+              <ion-label>Ley</ion-label>
+            </button>
+            <button ion-fab (click)="openAgenda()">
+              <ion-icon name="calendar"></ion-icon>
+              <ion-label>Agenda</ion-label>             
+            </button>
+
+        </ion-fab-list>
+      </ion-fab>
+
+<!-- 
+      <ion-fab bottom right >
+          <button ion-fab>Share</button>
+          <ion-fab-list side="top">
+             <button ion-fab>
+                <ion-icon name="logo-facebook"></ion-icon>
+                <ion-label>Facebook</ion-label>
+             </button>
+          </ion-fab-list>
+        </ion-fab> -->
+
 
 </ion-content>
