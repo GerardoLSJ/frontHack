@@ -21,11 +21,25 @@
         <ion-label>Título</ion-label>
         <ion-input type="text" formControlName="title"></ion-input>
       </ion-item>
+
       <ion-item>
+        asdf
+          <ion-label>Categorías</ion-label>
+          <ion-select formControlName="tags" multiple="true">
+            <ion-option *ngFor="let tagOp of tagList" [value]="tagOp.id">{{tagOp.title}}</ion-option>
+          </ion-select>
+        </ion-item>
+
+          
+
+      <ion-item>
+
+
+<!-- 
         <ion-label>Categorías</ion-label>
         <ion-input type="text" formControlName="tags"></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item> -->
         <ion-label>Resumen</ion-label>
         <ion-textarea formControlName="summary"></ion-textarea>
       </ion-item>
