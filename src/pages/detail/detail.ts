@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { HttpClient } from '@angular/common/http'
 
 /**
  * Generated class for the DetailPage page.
@@ -22,20 +23,28 @@ export class DetailPage {
   notes: string
   link: string
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  detail: any
+
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public http: HttpClient) {
+
+      this.detail = this.getDetails(this.navParams.data)
   }
 
   ionViewDidLoad() {
-    this.title = "Manejar a exceso de velocidad"
-    this.description = "La ley indica que el méximo de velocidad en vías primarias es de 45 km/h"
-    this.bullets = [
-      "Detener tu vehículo en cuanto puedas", 
-      "Preguntar el motivo de tu detención",
-      "No necesitas bajar la ventana del conductor, solo mostrar tu identificación", 
-    ]
-    this.notes = "Aquí se puede agregar la cantidad deseada de notas adicionaes, estas pueden variar por país."
-    this.link = "http://wikipedia.com"
     console.log('ionViewDidLoad DetailPage');
   }
 
+
+  getDetails(id: number){
+    this.http
+    .get(`https://lex-app48.herokuapp.com/api/law/${id}/?format=json`)
+    .subscribe((data: any) => {
+      console.log(data)
+      this.detail = data
+      
+    })
+  }
 }
