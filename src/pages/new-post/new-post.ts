@@ -18,8 +18,10 @@ import { HttpClient } from '@angular/common/http'
 })
 export class NewPostPage {
 
-  private post : FormGroup
+  private formLey : FormGroup
   public tagList: any
+  public cities = []
+  public requisitos = [{value:''}]
 
   constructor(
     public navCtrl: NavController, 
@@ -29,25 +31,27 @@ export class NewPostPage {
     public http: HttpClient ){
     
     this.getTags()
+    this.getCities()
 
-    this.post = this.formBuilder.group({
+    this.formLey = this.formBuilder.group({
       title: ['', Validators.required],
       summary: [''],
       bullets: [], 
       law: '', 
       reference: '', 
       tags: [''], 
-      notes: 'Sin comentarios'
+      notes: 'Sin comentarios',
+      city: []
       });
     }
 
 
   createLey(){
-    console.log(this.post.value)
-    this.apiProvider.postLey()
+    console.log(this.formLey.value)
+    this.apiProvider.postLey(this.formLey.value)
       .subscribe(res => {
-        console.log(res)
         console.log('éxito')
+        console.log(res)
         this.navCtrl.pop()
       }, (err) => {
         console.log(err);
@@ -58,12 +62,24 @@ export class NewPostPage {
     console.log('ionViewDidLoad NewPostPage');
   }
 
+  agregarCampo(){
+    this.requisitos.push({value:''})
+  }
+
 
   getTags() {
     this.apiProvider.getTags()
       .subscribe((data: any) => {
         console.log(data)
         this.tagList = data
+      })
+  }
+
+  getCities() {
+    this.apiProvider.getCities()
+      .subscribe((data: any) => {
+        console.log(data)
+        this.cities = data
       })
   }
 

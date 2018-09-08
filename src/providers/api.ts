@@ -23,8 +23,8 @@ export class ApiProvider {
 
   }
 
-  postLey(){
-    return this.http.post('https://lex-app48.herokuapp.com/api/law/', 'this.post.value')
+  postLey(ley){
+    return this.http.post('https://lex-app48.herokuapp.com/api/law/', ley)
 
   }
 
@@ -32,8 +32,10 @@ export class ApiProvider {
 
   }
 
-
+  getCities(){
+    return this.http.get('https://lex-app48.herokuapp.com/api/city/')
+  }
   getTags(){
-    return this.http.get('https://lex-app48.herokuapp.com/api/tags/?format=json')
+    return this.http.get('https://lex-app48.herokuapp.com/api/tags/')
   }
 }
