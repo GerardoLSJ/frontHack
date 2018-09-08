@@ -1,0 +1,47 @@
+<!--
+  Generated template for the NewPostPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>LEX</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <form [formGroup]="post" (ngSubmit)="logForm()">
+      <h2>Nuevo artículo</h2>
+      <ion-item>
+        <ion-label>Título</ion-label>
+        <ion-input type="text" formControlName="title"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Categorías</ion-label>
+        <ion-input type="text" formControlName="tags"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Resumen</ion-label>
+        <ion-textarea formControlName="summary"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label>Puntos importantes</ion-label>
+        <ion-textarea formControlName="bullets"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label>Artículo completo</ion-label>
+        <ion-textarea formControlName="law"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label>Referencia</ion-label>
+        <ion-textarea formControlName="reference"></ion-textarea>
+      </ion-item>
+    <button ion-button type="submit" [disabled]="!post.valid">Submit</button>
+    </form>
+
+</ion-content>
