@@ -24,6 +24,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../env/environment';
 import { NewProcedurePage } from '../pages/new-procedure/new-procedure';
+import { ApiProvider } from '../providers/api';
 
 
 @NgModule({
@@ -66,7 +67,8 @@ import { NewProcedurePage } from '../pages/new-procedure/new-procedure';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthProvider
+    AuthProvider,
+    ApiProvider
   ]
 })
 export class AppModule {}

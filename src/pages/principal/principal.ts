@@ -1,3 +1,5 @@
+import { AgendaPage } from './../agenda/agenda';
+import { NewProcedurePage } from './../new-procedure/new-procedure';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TitlesPage } from '../../pages/titles/titles';
@@ -55,15 +57,17 @@ export class PrincipalPage {
   }
 
   openLey(){
-
+    this.navCtrl.push(NewPostPage)
   }
 
 
   openAgenda(){
+    this.navCtrl.push(AgendaPage)
 
   }
 
   openTramite(){
-    
+    this.navCtrl.push(NewProcedurePage)
+
   }
 }

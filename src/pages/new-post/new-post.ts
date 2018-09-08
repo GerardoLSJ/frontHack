@@ -1,3 +1,4 @@
+import { ApiProvider } from './../../providers/api';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Validators, FormBuilder, FormGroup } from '@angular/forms';
@@ -24,6 +25,7 @@ export class NewPostPage {
     public navCtrl: NavController, 
     public navParams: NavParams,  
     private formBuilder: FormBuilder, 
+    public apiProvider: ApiProvider,
     public http: HttpClient ){
     
     this.getTags()
@@ -40,17 +42,16 @@ export class NewPostPage {
     }
 
 
-  logForm(){
+  createLey(){
     console.log(this.post.value)
-    this.http.post('https://lex-app48.herokuapp.com/api/law/', this.post.value)
+    this.apiProvider.postLey()
       .subscribe(res => {
         console.log(res)
         console.log('éxito')
         this.navCtrl.pop()
       }, (err) => {
         console.log(err);
-      });
-    
+    });
     }
 
   ionViewDidLoad() {
@@ -58,13 +59,12 @@ export class NewPostPage {
   }
 
 
-  getTags(){
-    this.http
-    .get('https://lex-app48.herokuapp.com/api/tags/?format=json')
-    .subscribe((data: any) => {
-      console.log(data)
-      this.tagList = data
-    })
+  getTags() {
+    this.apiProvider.getTags()
+      .subscribe((data: any) => {
+        console.log(data)
+        this.tagList = data
+      })
   }
 
 }
