@@ -27,6 +27,10 @@ import { NewProcedurePage } from '../pages/new-procedure/new-procedure';
 import { ApiProvider } from '../providers/api';
 
 
+import { Media } from '@ionic-native/media';
+import { File } from '@ionic-native/file';
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -68,7 +72,8 @@ import { ApiProvider } from '../providers/api';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
-    ApiProvider
+    ApiProvider, 
+    Media, File
   ]
 })
 export class AppModule {}
