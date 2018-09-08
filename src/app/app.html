@@ -7,10 +7,15 @@
 
   <ion-content>
     <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
-      </button>
-
+      <div class="imgContainer">
+          <img class="circle-pic" 
+          src="http://autokadabra.ru/system/uploads/users/18/18340/small.png?1318432918" />
+      </div>
+      <div  class="selectableMenu">
+        <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+          {{p.title}}
+        </button>
+    </div>
       <button ion-item (click)="loginFb()">
         Login Facebook
       </button>
