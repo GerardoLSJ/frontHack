@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DetailPage } from '../../pages/detail/detail'
+import { HttpClient } from '@angular/common/http'
+
 /**
  * Generated class for the TitlesPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
+
 
 @IonicPage()
 @Component({
@@ -16,33 +19,31 @@ import { DetailPage } from '../../pages/detail/detail'
 export class TitlesPage {
 
   titles : Array<{id: number, title : string, description : string}>
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public http: HttpClient) {
   }
 
   ionViewDidLoad() {
+    let id = this.navParams.data
+    console.log(id)
     console.log('ionViewDidLoad TitlesPage');
-    this.titles = [
-      {
-        id: 1, 
-        title: "Exceso de velocidad", 
-        description: "La ley indica que el méximo de velocidad en vías primarias es de 45 km/h"
-
-      },
-      {
-        id: 2, 
-        title: "Beber mientras conduces", 
-        description: "Las infracciones por beber mientras se conduce un vehículo son de 50 salarios mínimos"
-      },
-      {
-        id: 3, 
-        title: "Pasarte un alto", 
-        description: "Pasarte un alto implica 25 horas de arresto y 4 salarios mínimos de multa"
-
-      },
-    ]
+    this.getTags(0)
   }
 
   goToDetail(id : number){
     this.navCtrl.push(DetailPage, id)
+  }
+
+
+  getTags(id: number){
+    this.http
+    .get('https://lex-app48.herokuapp.com/api/law/?format=json')
+    .subscribe((data: any) => {
+      console.log(data)
+      this.titles = data
+      
+    })
   }
 } 

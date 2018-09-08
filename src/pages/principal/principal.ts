@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TitlesPage } from '../../pages/titles/titles';
 import { NewPostPage } from '../../pages/new-post/new-post';
+import { HttpClient } from '@angular/common/http'
 
 /**
  * Generated class for the PrincipalPage page.
@@ -9,6 +10,11 @@ import { NewPostPage } from '../../pages/new-post/new-post';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
+export interface Tag {
+  id:number,
+  title:string,
+  description:string
+}
 
 @IonicPage()
 @Component({
@@ -17,35 +23,32 @@ import { NewPostPage } from '../../pages/new-post/new-post';
 })
 export class PrincipalPage {
 
-  tags : Array<{id: number, title: string, img: string}>
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  tags : Array<Tag>
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public http: HttpClient) {
   }
 
   ionViewDidLoad() {
+    this.getTags()
     console.log('ionViewDidLoad PrincipalPage');
-    this.tags = [
-      {
-        "id": 1,
-        "title": "Tránsito", 
-        "img": "assets/imgs/default.png"
-      }, 
-      {
-        "id": 2,
-        "title": "Trámites", 
-        "img": "assets/imgs/default.png"
-      }, 
-      {
-        "id": 3,
-        "title": "Leyes", 
-        "img": "assets/imgs/default.png"
-      }
-    ]
   }
 
   goToTitles(id){
     this.navCtrl.push(TitlesPage, id)
   }
 
+  getTags(){
+    this.http
+    .get('https://lex-app48.herokuapp.com/api/tags/?format=json')
+    .subscribe((data: Tag[]) => {
+      console.log(data)
+      this.tags = data
+    })
+  }
+
+  
   newPost(){
     console.log("clicked")
     this.navCtrl.push(NewPostPage)
