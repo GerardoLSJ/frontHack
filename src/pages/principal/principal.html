@@ -19,7 +19,7 @@
 <ion-content padding>
 
   <ion-card *ngFor="let tag of tags" (click)="goToTitles(tag.id)">
-      <img [src]="tag.img"/>
+      <img src="assets/imgs/default.png"/>
       <div class="card-title">{{tag.title}}</div>
     </ion-card>
 
