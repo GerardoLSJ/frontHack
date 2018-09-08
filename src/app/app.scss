@@ -14,3 +14,53 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+
+
+.list-md .item-block .item-inner {
+    border-bottom: 1px solid #dedede00;
+}
+
+.circle-pic{
+    width:125px;
+    height:125px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    top:-10px;
+    bottom:10px;
+    left:10px;
+    right: 0px;
+    padding:10px;
+    position: relative;
+}
+
+.imgContainer{
+    background-color:black;
+    border-bottom: 1px solid #dedede8e;
+}
+
+.toolbar-md, .toolbar-background-md {
+    background-color:  black;
+}
+
+.toolbar-content-md{
+    display: none
+}
+
+.selectableMenu{
+    padding-top: 25px;
+    padding-left:10px;
+}
+
+.fab-md-primary {
+    background-color: #E91E63;
+}
+
+.bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default{
+    background-color: transparent;
+    color: #ffffff;
+}
+
+ion-app.md [padding] .scroll-content {
+    padding-top: 70px;
+}
