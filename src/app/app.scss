@@ -35,12 +35,18 @@
 }
 
 .imgContainer{
-    background-color:black;
-    border-bottom: 1px solid #dedede8e;
+    // background-color:black;
+    // border-bottom: 1px solid #dedede8e;
+    background: #005C97;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #363795, #005C97);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #363795, #005C97); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 .toolbar-md, .toolbar-background-md {
-    background-color:  black;
+    background: #005C97;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #363795, #005C97);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #363795, #005C97); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .toolbar-content-md{
@@ -52,9 +58,9 @@
     padding-left:10px;
 }
 
-.fab-md-primary {
-    background-color: #E91E63;
-}
+// .fab-md-primary {
+//     background-color: #E91E63;
+// }
 
 .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default{
     background-color: transparent;
