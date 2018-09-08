@@ -12,6 +12,7 @@ import { AgendaPage } from '../pages/agenda/agenda';
 import { ProfilePage } from '../pages/profile/profile';
 import { AgendaDetailPage } from '../pages/agenda-detail/agenda-detail';
 import { NewPostPage } from '../pages/new-post/new-post';
+import { LoginPage } from '../pages/login/login';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -33,7 +34,8 @@ import { environment } from '../env/environment';
     AgendaPage, 
     ProfilePage, 
     AgendaDetailPage, 
-    NewPostPage
+    NewPostPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
@@ -53,7 +55,8 @@ import { environment } from '../env/environment';
     AgendaPage, 
     ProfilePage, 
     AgendaDetailPage, 
-    NewPostPage
+    NewPostPage,
+    LoginPage
   ],
   providers: [
     StatusBar,

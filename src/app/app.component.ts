@@ -1,3 +1,4 @@
+import { LoginPage } from './../pages/login/login';
 import { AuthProvider } from './../providers/auth';
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
@@ -28,7 +29,9 @@ export class MyApp {
       { title: 'Inicio', component: PrincipalPage },
       { title: 'Mi Perfil', component: ProfilePage },
       { title: 'Agenda', component: AgendaPage },
-      { title: 'Cerrar sesión', component: PrincipalPage }
+      { title: 'Cerrar sesión', component: PrincipalPage },
+      { title: 'Login', component: LoginPage }
+
     ];
 
   }

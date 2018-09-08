@@ -26,12 +26,11 @@ export class AuthProvider {
 
 
   login(email, password){
-    this.afAuth.auth.signInAndRetrieveDataWithEmailAndPassword(email,password).then(
-      (res)=>{
-        console.log(res)
-      }
+    return this.afAuth.auth.signInAndRetrieveDataWithEmailAndPassword(email,password)
+  }
 
-    )
+  createUser(email, password){
+    return this.afAuth.auth.createUserAndRetrieveDataWithEmailAndPassword(email,password)
   }
 
   loginFB(){
