@@ -28,8 +28,8 @@ export class AgendaPage {
     console.log('ionViewDidLoad AgendaPage');
   }
 
-  goToDetail(id: number){
-    this.navCtrl.push(AgendaDetailPage, id)
+  goToDetail(id: number, title: string){
+    this.navCtrl.push(AgendaDetailPage, {id: id, title: title})
   } 
 
 }

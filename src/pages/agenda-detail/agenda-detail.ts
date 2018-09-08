@@ -18,6 +18,7 @@ export class AgendaDetailPage {
   title: string
   bullets: Array<{title: string, marked: boolean}>
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.title = this.navParams.data.title
     this.bullets = [
       {title: "Acta de nacimiento actualizada", marked: false}, 
       {title: "2 fotografías tamaño infantil tamaño mate", marked: false},
