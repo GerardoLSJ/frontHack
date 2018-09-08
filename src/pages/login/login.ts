@@ -1,6 +1,7 @@
 import { AuthProvider } from './../../providers/auth';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { PrincipalPage } from '../principal/principal';
 
 /**
  * Generated class for the LoginPage page.
@@ -33,7 +34,9 @@ export class LoginPage {
     this.authProvider.login(this.loginForm.email,this.loginForm.pass).then(
       response=>{
         console.log('login,', response)
-      }
+        this.navCtrl.setRoot(PrincipalPage)
+      },
+      error => console.log(error)
     )
     console.log(this.loginForm)
   }
