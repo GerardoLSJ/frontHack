@@ -13,25 +13,38 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding-left padding-right>
+  
+<h1 padding-left>        {{detail?.title}}  </h1>
+  <h6 padding-left>{{detail?.law}}</h6>
+  <div class = "cards">
+  <ion-card class="importantCard">
+    <ion-card-content>
+        <ion-card-title>
+            ¡Importante!
+        </ion-card-title>
+        {{detail?.law}}
+    </ion-card-content>
+  </ion-card>
 
-  <h2>{{detail?.title }}</h2>
-  <br>
-  <h4>Descripción</h4>
-  <p>
-    {{detail?.summary }}</p>
-  <br>
-
-  <h4>Requisitos</h4>
-  <p>{{detail?.bullets}}</p>
-  <!-- <ul>
-    <li *ngFor="let bullet of bullets">{{detail?.bullet }}</li>
-  </ul> -->
+  <ion-card>
+      <ion-card-content>
+          <ion-card-title>
+              Adicionalmente
+          </ion-card-title>
+          {{detail?.summary}}
+      </ion-card-content>
+    </ion-card>
 
 
-  <br>
-  <h4>Información adicional</h4>
-  <p>{{detail?.notes}}</p>
-  <a [href]="link">{{detail?.link }}</a>
+    <ion-card>
+        <ion-card-content>
+            <ion-card-title>
+                Referencia
+            </ion-card-title>
+            {{detail?.reference}}
+        </ion-card-content>
+      </ion-card>
+    </div>
 
 </ion-content>

@@ -94,7 +94,7 @@ ion-app.md [padding] .scroll-content {
     padding: 13px 16px;
     font-size: 1.4rem;
     line-height: 1.5;
-    min-height: 100px;
+    min-height: 60px;
 }
 
 .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
@@ -134,4 +134,8 @@ ion-app.md [padding] .scroll-content {
       border: 1px solid #EDEFF1;
       padding: 5px 10px;
     }
+  }
+
+  h6{
+    font-weight:100;
   }
