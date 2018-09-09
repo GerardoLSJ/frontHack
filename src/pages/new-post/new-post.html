@@ -30,28 +30,17 @@
       <ion-item>
 
         <ion-label style="font-size:17px;" stacked >Resumen</ion-label>
-        <ion-textarea style="min-height: 200px" formControlName="summary"></ion-textarea>
+        <ion-textarea class="h200" formControlName="summary"></ion-textarea>
 
       </ion-item>
       <ion-item>
         <ion-label>Requisitos <button  ion-button (click)="agregarCampo()">Agrear</button></ion-label>
         <ion-input type="text"  formControlName="bullets"></ion-input>
 
-        <!-- <ion-item *ngFor="let att of requisitos; let idx = index">
-            <ion-label color="primary">{{att.label}}{{idx+1}}</ion-label>
-            <ion-input type="text"  text-right  [formControlName]="requisitos[idx]"></ion-input>
-        </ion-item>
-
-        <ion-item formArrayName="properties">
-            <div *ngFor="let prop of searchForm.get('properties').controls; let i=index">
-              <input type="text" class="form-control" [formControlName]="i">
-            </div>
-          </div>
-      </ion-item> -->
     </ion-item>
       <ion-item>
         <ion-label style="font-size:17px;" stacked >Artículo completo</ion-label>
-        <ion-textarea style="min-height: 200px" formControlName="law"></ion-textarea>
+        <ion-textarea class="h200" formControlName="law"></ion-textarea>
       </ion-item>
 
       <ion-item>

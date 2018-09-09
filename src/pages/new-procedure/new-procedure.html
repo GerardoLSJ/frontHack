@@ -7,14 +7,14 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>newProcedure</ion-title>
+    <ion-title>Procedure </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <form [formGroup]="formLey" (ngSubmit)="createLey()">
+  <form [formGroup]="formProc" (ngSubmit)="createLey()">
     <h2>Nuevo artículo</h2>
     <ion-item>
       <ion-label>Título</ion-label>
@@ -29,7 +29,7 @@
     <ion-item>
 
       <ion-label style="font-size:17px;" stacked >Resumen</ion-label>
-      <ion-textarea style="min-height: 200px" formControlName="summary"></ion-textarea>
+      <ion-textarea class="h200" formControlName="summary"></ion-textarea>
 
     </ion-item>
     <ion-item>
@@ -37,10 +37,10 @@
       <ion-input type="text"  formControlName="steps"></ion-input>
 
   </ion-item>
-    <ion-item>
+    <!-- <ion-item>
       <ion-label style="font-size:17px;" stacked >Artículo completo</ion-label>
       <ion-textarea style="min-height: 200px" formControlName="law"></ion-textarea>
-    </ion-item>
+    </ion-item> -->
 
     <ion-item>
         <ion-label>Ciudad</ion-label>
@@ -53,6 +53,6 @@
       <ion-label>Referencia</ion-label>
       <ion-textarea formControlName="reference"></ion-textarea>
     </ion-item>
-  <button ion-button type="submit" [disabled]="!formLey.valid">Submit</button>
+  <button ion-button type="submit" [disabled]="!formProc.valid">Submit</button>
   </form>
 </ion-content>

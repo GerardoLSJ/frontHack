@@ -30,9 +30,6 @@ export class NewPostPage {
     public apiProvider: ApiProvider,
     public http: HttpClient ){
     
-    this.getTags()
-    this.getCities()
-
     this.formLey = this.formBuilder.group({
       title: ['', Validators.required],
       summary: [''],
@@ -43,6 +40,11 @@ export class NewPostPage {
       notes: 'Sin comentarios',
       city: []
       });
+
+      this.getTags()
+      this.getCities()
+
+      
     }
 
 

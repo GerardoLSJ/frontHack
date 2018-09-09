@@ -17,7 +17,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class NewProcedurePage {
   private formProc : FormGroup
-
+  public tagList = [ ]
+  public cities = []
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     public formBuilder:FormBuilder,
@@ -33,7 +34,9 @@ export class NewProcedurePage {
       city: [],
       rating: []
       });
-    
+      this.getTags()
+      this.getCities()
+
   }
 
   ionViewDidLoad() {
@@ -50,5 +53,21 @@ export class NewProcedurePage {
       }, (err) => {
         console.log(err);
     });
+    }
+
+    getTags() {
+      this.apiProvider.getTags()
+        .subscribe((data: any) => {
+          console.log(data)
+          this.tagList = data
+        })
+    }
+  
+    getCities() {
+      this.apiProvider.getCities()
+        .subscribe((data: any) => {
+          console.log(data)
+          this.cities = data
+        })
     }
 }

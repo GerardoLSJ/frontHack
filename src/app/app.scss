@@ -104,3 +104,18 @@ ion-app.md [padding] .scroll-content {
 .toolbar-title-md {
     color: white;
 }
+
+// ion-textarea {
+//     &.200{
+//         min-height: 200px;
+//         textarea{
+//             min-height: 200px;  
+//         }
+//     }
+// }
+
+ ion-textarea.h200 {
+    textarea{
+        min-height: 200px;
+    }
+ } 
