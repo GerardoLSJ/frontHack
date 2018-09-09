@@ -25,6 +25,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../env/environment';
 import { NewProcedurePage } from '../pages/new-procedure/new-procedure';
 import { ApiProvider } from '../providers/api';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
 
 
 import { Media } from '@ionic-native/media';
@@ -73,7 +74,8 @@ import { File } from '@ionic-native/file';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
     ApiProvider, 
-    Media, File
+    Media, File, 
+    FileTransfer
   ]
 })
 export class AppModule {}

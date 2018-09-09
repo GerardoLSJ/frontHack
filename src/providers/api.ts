@@ -28,6 +28,14 @@ export class ApiProvider {
 
   }
 
+
+  postAudio(audio){
+    console.log('AUDIO CALLED:')
+    console.log(audio)
+    return this.http.post('http://127.0.0.1:8000/api/audio/', audio)
+  }
+
+
   getLey(){
 
   }

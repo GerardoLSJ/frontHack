@@ -8,6 +8,9 @@ import { HttpClient } from '@angular/common/http'
 
 import { Media, MediaObject } from '@ionic-native/media';
 import { File } from '@ionic-native/file';
+import { ApiProvider } from '../../providers/api';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+
 
 /**
  * Generated class for the PrincipalPage page.
@@ -41,8 +44,11 @@ export class PrincipalPage {
     public navParams: NavParams, 
     public http: HttpClient, 
     private media: Media,
-    private file: File,
-    public platform: Platform) {
+    public platform: Platform, 
+    public apiProvider: ApiProvider, 
+    private transfer: FileTransfer, 
+    private file: File) {
+
   }
 
   ionViewDidLoad() {
@@ -93,6 +99,8 @@ export class PrincipalPage {
     if(localStorage.getItem("audiolist")) {
       this.audioList = JSON.parse(localStorage.getItem("audiolist"));
       console.log(this.audioList);
+      console.log('API PROVIDER: ')
+      this.upload()
     }
   }
 
@@ -129,6 +137,24 @@ export class PrincipalPage {
     }
     this.audio.play();
     this.audio.setVolume(0.8);
+  }
+
+
+  upload() {
+    const fileTransfer: FileTransferObject = this.transfer.create();
+
+    let options: FileUploadOptions = {
+       fileKey: 'file',
+       fileName: this.fileName,
+       headers: {}
+    }
+  
+    fileTransfer.upload(this.filePath, 'http://127.0.0.1:8000/api/audio/', options)
+     .then((data) => {
+        console.log(data)
+     }, (err) => {
+       console.log(err)
+     })
   }
 
 
