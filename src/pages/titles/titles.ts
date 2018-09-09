@@ -17,19 +17,23 @@ import { HttpClient } from '@angular/common/http'
   templateUrl: 'titles.html',
 })
 export class TitlesPage {
-
+  
+  title: string
   titles : Array<{id: number, title : string, description : string}>
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams, 
     public http: HttpClient) {
+      console.log(this.navParams.data)
+      this.title = this.navParams.data.title
   }
+
 
   ionViewDidLoad() {
     let id = this.navParams.data
     console.log(id)
     console.log('ionViewDidLoad TitlesPage');
-    this.getTags(0)
+    this.getTags(id)
   }
 
   goToDetail(id : number){
@@ -39,7 +43,7 @@ export class TitlesPage {
 
   getTags(id: number){
     this.http
-    .get('https://lex-app48.herokuapp.com/api/law/?format=json')
+    .get('https://lex-app48.herokuapp.com/api/procedure/?format=json')
     .subscribe((data: any) => {
       console.log(data)
       this.titles = data

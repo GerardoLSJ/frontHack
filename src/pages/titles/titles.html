@@ -7,24 +7,19 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Titles</ion-title>
+    <ion-title>{{title}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-
-  <ion-card *ngFor="let title of titles" (click)="goToDetail(title.id )">
+<ion-content padding-top>
+  <ion-card *ngFor="let title of titles" (click)="goToDetail(title.id, title.title)">
       <ion-card-header>
-        <h2>
-          {{title.title}}
-        </h2>
+        <h3>
+          <b>{{title.title}}</b>
+        </h3>
       </ion-card-header>
-    
-      <ion-card-content>
-        {{title.description}}
-      </ion-card-content>
     </ion-card>
 
 </ion-content>

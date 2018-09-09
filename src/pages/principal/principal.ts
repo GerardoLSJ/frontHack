@@ -56,8 +56,8 @@ export class PrincipalPage {
     console.log('ionViewDidLoad PrincipalPage');
   }
 
-  goToTitles(id){
-    this.navCtrl.push(TitlesPage, id)
+  goToTitles(id, title){
+    this.navCtrl.push(TitlesPage, {id: id, title: title})
   }
 
   getTags(){

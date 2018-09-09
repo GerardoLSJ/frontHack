@@ -17,6 +17,7 @@
 
 <ion-content padding>
 
+  <h1>Agenda</h1>
   <ion-card *ngFor="let appoint of appoints" (click)="goToDetail(appoint.id, appoint.title)">
       <ion-card-header>
         <h2>
