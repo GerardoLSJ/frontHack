@@ -13,6 +13,9 @@ import { ProfilePage } from '../pages/profile/profile';
 import { AgendaDetailPage } from '../pages/agenda-detail/agenda-detail';
 import { NewPostPage } from '../pages/new-post/new-post';
 import { LoginPage } from '../pages/login/login';
+import { TramiteDetailPage } from './../pages/tramite-detail/tramite-detail';
+import { TramitesPage } from './../pages/tramites/tramites';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -44,7 +47,9 @@ import { File } from '@ionic-native/file';
     AgendaDetailPage, 
     NewPostPage,
     LoginPage,
-    NewProcedurePage
+    NewProcedurePage,
+    TramitesPage,
+    TramiteDetailPage
   ],
   imports: [
     BrowserModule,
@@ -66,7 +71,9 @@ import { File } from '@ionic-native/file';
     AgendaDetailPage, 
     NewPostPage,
     LoginPage,
-    NewProcedurePage
+    NewProcedurePage,
+    TramitesPage,
+    TramiteDetailPage
   ],
   providers: [
     StatusBar,

@@ -20,7 +20,7 @@
         <ion-card-content>
           <ion-card-title>
             <button ion-button primary (click)="stopRecord()" *ngIf="recording"><ion-icon name="mic-off"></ion-icon>&nbsp;&nbsp;Stop Record</button>
-            <button ion-button primary (click)="startRecord()" *ngIf="!recording"><ion-icon name="mic"></ion-icon>&nbsp;&nbsp;Start Record</button>
+            <button ion-button primary (click)="startRecord()" *ngIf="!recording"><ion-icon name="mic"></ion-icon>&nbsp;&nbsp;Buscar con voz</button>
           </ion-card-title>
         </ion-card-content>
       </ion-card>
@@ -35,11 +35,11 @@
       
 
   <ion-card  (click)="goToTitles(tags[0]?.id)">
-      <img src="assets/imgs/default.png"/>
+      <img [src]="tags[0]?.img"/>
       <div class="card-title">{{tags[0]?.title}}</div>
     </ion-card>
-    <ion-card  (click)="goToTitles(tags[1]?.id)">
-      <img src="assets/imgs/tramite.jpg"/>
+    <ion-card  (click)="goToTramites()">
+      <img [src]="tags[1]?.img"/>
       <div class="card-title">{{tags[1]?.title}}</div>
     </ion-card>
 

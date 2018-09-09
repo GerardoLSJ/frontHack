@@ -10,6 +10,7 @@ import { Media, MediaObject } from '@ionic-native/media';
 import { File } from '@ionic-native/file';
 import { ApiProvider } from '../../providers/api';
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { TramitesPage } from '../tramites/tramites';
 
 
 /**
@@ -58,6 +59,9 @@ export class PrincipalPage {
 
   goToTitles(id, title){
     this.navCtrl.push(TitlesPage, {id: id, title: title})
+  }
+  goToTramites(){
+    this.navCtrl.push(TramitesPage)
   }
 
   getTags(){
