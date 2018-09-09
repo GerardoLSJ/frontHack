@@ -34,13 +34,13 @@
 
       
 
-  <ion-card  (click)="goToTitles(tags[0]?.id)">
-      <img [src]="tags[0]?.img"/>
-      <div class="card-title">{{tags[0]?.title}}</div>
+  <ion-card  (click)="goToTitles()">
+      <img src="assets/imgs/default.png"/>
+      <div class="card-title">Leyes</div>
     </ion-card>
     <ion-card  (click)="goToTramites()">
-      <img [src]="tags[1]?.img"/>
-      <div class="card-title">{{tags[1]?.title}}</div>
+      <img src="assets/imgs/tramite.jpg"/>
+      <div class="card-title">Trámites</div>
     </ion-card>
 
     <ion-fab right bottom>

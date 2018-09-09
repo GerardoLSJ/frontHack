@@ -6,13 +6,40 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Tramites</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+      <ion-title>Tramites</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content no-padding>
+      <div class="filters">
+  
+          <ion-select placeholder="Ciudad" (ionChange)="onCityFilter($event)">
+              <ion-option *ngFor="let city of cities" [value]="city.id">{{city.name}}</ion-option>
+          </ion-select>
 
-</ion-header>
+          <ion-select placeholder="Tags" (ionChange)="onTagsFilter($event)">
+              <ion-option *ngFor="let item of tagList " [value]="item.id">{{item.title}}</ion-option>
+            </ion-select>
+        </div>
 
+      <ion-searchbar
+      [(ngModel)]="mySearch"
+      [debounce]="200"
+      [type]="'text'"
+      [showCancelButton]="true"
+      (ionInput)="onSearch($event)"
+      (ionCancel)="onCancel($event)">
+    </ion-searchbar>
+    <ion-card *ngFor="let item of tramites" (click)="detalle(item)">
+        <ion-card-header>
+          <h3>
+            <b>{{item.title}}</b>
+          </h3>
+        </ion-card-header>
+      </ion-card>
 
-<ion-content padding>
-
-</ion-content>
+  </ion-content>
+  

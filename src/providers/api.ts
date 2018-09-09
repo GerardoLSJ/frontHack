@@ -18,8 +18,15 @@ export class ApiProvider {
     return this.http.post('https://lex-app48.herokuapp.com/api/procedure/', tramite)
   }
 
-  getTramite(){
-    return this.http.get('https://lex-app48.herokuapp.com/api/procedure/')
+  getTramite(params?){
+    let url = 'https://lex-app48.herokuapp.com/api/procedure/?'
+    if(params){
+      for (let k in params){
+        url += `${k}=${params[k]}&`
+        //console.log(url)
+      }
+    }
+    return this.http.get(url)
   }
 
   postLey(ley){
