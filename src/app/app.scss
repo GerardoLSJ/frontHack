@@ -119,3 +119,19 @@ ion-app.md [padding] .scroll-content {
         min-height: 200px;
     }
  } 
+
+ .filters{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    .select{
+      margin: 0 5px;
+      position: relative;
+      background: white;
+      border-radius: 5px;
+      border: 1px solid #EDEFF1;
+      padding: 5px 10px;
+    }
+  }

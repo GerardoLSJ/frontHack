@@ -13,7 +13,17 @@
 </ion-header>
 
 
-<ion-content padding-top>
+<ion-content no-padding>
+    <div class="filters">
+
+        <ion-select placeholder="Order by" (ionChange)="onProjectOrder($event)">
+          <ion-option value="dateAsc">Date init</ion-option>
+          <ion-option value="dateDesc">Date end</ion-option>
+          <ion-option value="progressDesc">More progress</ion-option>
+          <ion-option value="progressAsc">Minor progress</ion-option>
+    
+        </ion-select>
+      </div>
   <ion-card *ngFor="let title of titles" (click)="goToDetail(title.id, title.title)">
       <ion-card-header>
         <h3>

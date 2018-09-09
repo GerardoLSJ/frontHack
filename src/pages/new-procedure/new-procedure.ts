@@ -32,7 +32,7 @@ export class NewProcedurePage {
       tags: [''], 
       notes: 'Sin comentarios',
       city: [],
-      rating: []
+      rating: [0]
       });
       this.getTags()
       this.getCities()
@@ -45,7 +45,7 @@ export class NewProcedurePage {
 
   createTramite(){
     // console.log(this.post.value)
-    this.apiProvider.postTramite()
+    this.apiProvider.postTramite(this.formProc.value)
       .subscribe(res => {
         console.log(res)
         console.log('éxito')

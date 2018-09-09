@@ -81,7 +81,7 @@ export class PrincipalPage {
 
 
   openAgenda(){
-    this.navCtrl.push(AgendaPage)
+    this.navCtrl.setRoot(AgendaPage)
 
   }
 

@@ -14,20 +14,18 @@ export class ApiProvider {
     console.log('Hello ApiProvider Provider');
   }
 
-  postTramite(){
-    return this.http.post('https://lex-app48.herokuapp.com/api/law/', 'this.post.value')
-  
+  postTramite(tramite){
+    return this.http.post('https://lex-app48.herokuapp.com/api/procedure/', tramite)
   }
 
   getTramite(){
-
+    return this.http.get('https://lex-app48.herokuapp.com/api/procedure/')
   }
 
   postLey(ley){
     return this.http.post('https://lex-app48.herokuapp.com/api/law/', ley)
 
   }
-
 
   postAudio(audio){
     console.log('AUDIO CALLED:')
@@ -37,6 +35,7 @@ export class ApiProvider {
 
 
   getLey(){
+    return this.http.get('https://lex-app48.herokuapp.com/api/law/')
 
   }
 
