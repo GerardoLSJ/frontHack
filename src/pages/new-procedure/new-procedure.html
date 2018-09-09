@@ -14,5 +14,45 @@
 
 
 <ion-content padding>
+  <form [formGroup]="formLey" (ngSubmit)="createLey()">
+    <h2>Nuevo artículo</h2>
+    <ion-item>
+      <ion-label>Título</ion-label>
+      <ion-input type="text" formControlName="title"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Categorías</ion-label>
+        <ion-select formControlName="tags" multiple="true">
+          <ion-option *ngFor="let tagOp of tagList" [value]="tagOp.id">{{tagOp.title}}</ion-option>
+        </ion-select>
+      </ion-item>    
+    <ion-item>
 
+      <ion-label style="font-size:17px;" stacked >Resumen</ion-label>
+      <ion-textarea style="min-height: 200px" formControlName="summary"></ion-textarea>
+
+    </ion-item>
+    <ion-item>
+      <ion-label>Pasos <button  ion-button (click)="agregarCampo()">Agrear</button></ion-label>
+      <ion-input type="text"  formControlName="steps"></ion-input>
+
+  </ion-item>
+    <ion-item>
+      <ion-label style="font-size:17px;" stacked >Artículo completo</ion-label>
+      <ion-textarea style="min-height: 200px" formControlName="law"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Ciudad</ion-label>
+        <ion-select formControlName="city" multiple="false">
+          <ion-option *ngFor="let city of cities" [value]="city.id">{{city.name}}</ion-option>
+        </ion-select>
+      </ion-item>    
+
+    <ion-item>
+      <ion-label>Referencia</ion-label>
+      <ion-textarea formControlName="reference"></ion-textarea>
+    </ion-item>
+  <button ion-button type="submit" [disabled]="!formLey.valid">Submit</button>
+  </form>
 </ion-content>

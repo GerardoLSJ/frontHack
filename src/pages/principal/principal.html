@@ -39,9 +39,14 @@
 
 
       
-  <ion-card *ngFor="let tag of tags" (click)="goToTitles(tag.id, tag.title)">
+
+  <ion-card  (click)="goToTitles(tags[0]?.id)">
       <img src="assets/imgs/default.png"/>
-      <div class="card-title">{{tag.title}}</div>
+      <div class="card-title">{{tags[0]?.title}}</div>
+    </ion-card>
+    <ion-card  (click)="goToTitles(tags[1]?.id)">
+      <img src="assets/imgs/tramite.jpg"/>
+      <div class="card-title">{{tags[1]?.title}}</div>
     </ion-card>
 
     <ion-fab right bottom>

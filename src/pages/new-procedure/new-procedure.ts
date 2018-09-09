@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ApiProvider } from '../../providers/api';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 /**
  * Generated class for the NewProcedurePage page.
@@ -15,9 +16,24 @@ import { ApiProvider } from '../../providers/api';
   templateUrl: 'new-procedure.html',
 })
 export class NewProcedurePage {
+  private formProc : FormGroup
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams,
+    public formBuilder:FormBuilder,
     public apiProvider:ApiProvider) {
+
+    this.formProc = this.formBuilder.group({
+      title: ['', Validators.required],
+      summary: [''],
+      steps: [], 
+      reference: '', 
+      tags: [''], 
+      notes: 'Sin comentarios',
+      city: [],
+      rating: []
+      });
+    
   }
 
   ionViewDidLoad() {

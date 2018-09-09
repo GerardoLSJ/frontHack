@@ -7,5 +7,6 @@ export const environment = {
     projectId: "mxhacks48",
     storageBucket: "mxhacks48.appspot.com",
     messagingSenderId: "268857582822"
-    }
+    },
+    apiEndpoint:''
   };

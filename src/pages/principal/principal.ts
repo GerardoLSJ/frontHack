@@ -31,7 +31,7 @@ export interface Tag {
 })
 export class PrincipalPage {
 
-  tags : Array<Tag>
+  tags = [{},{}]
 
   recording: boolean = false;
   filePath: string;
@@ -142,14 +142,14 @@ export class PrincipalPage {
 
   upload() {
     const fileTransfer: FileTransferObject = this.transfer.create();
-
+    console.log('fileTransfer',fileTransfer)
     let options: FileUploadOptions = {
        fileKey: 'file',
        fileName: this.fileName,
        headers: {}
     }
   
-    fileTransfer.upload(this.filePath, 'http://127.0.0.1:8000/api/audio/', options)
+    fileTransfer.upload(this.filePath, 'https://lex-app48.herokuapp.com/api/audio/', options)
      .then((data) => {
         console.log(data)
      }, (err) => {

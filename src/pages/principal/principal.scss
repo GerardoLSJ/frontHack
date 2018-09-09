@@ -1,5 +1,15 @@
 page-principal {
     
+
+.toolbar-title {
+  text-align: center !important;
+}
+
+.toolbar-title-md {
+  text-align: center !important;
+  padding-right: 40px;
+}
+
     ion-card {
         position: relative;
         text-align: center;
@@ -12,6 +22,7 @@ page-principal {
         width: 100%;
         font-weight: bold;
         color: #fff;
+        text-shadow: 1px 1px #464646;
       }
 
       button[ion-fab] {
