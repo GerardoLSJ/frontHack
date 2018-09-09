@@ -30,7 +30,8 @@ export class DetailPage {
     public navParams: NavParams, 
     public http: HttpClient) {
 
-      this.detail = this.getDetails(this.navParams.data)
+      this.detail = this.navParams.get('data')
+      console.log(this.detail)
   }
 
   ionViewDidLoad() {
@@ -38,13 +39,13 @@ export class DetailPage {
   }
 
 
-  getDetails(id: number){
-    this.http
-    .get(`https://lex-app48.herokuapp.com/api/law/${id}/?format=json`)
-    .subscribe((data: any) => {
-      console.log(data)
-      this.detail = data
+  // getDetails(id: number){
+  //   this.http
+  //   .get(`https://lex-app48.herokuapp.com/api/law/${id}/?format=json`)
+  //   .subscribe((data: any) => {
+  //     console.log(data)
+  //     this.detail = data
       
-    })
-  }
+  //   })
+  // }
 }

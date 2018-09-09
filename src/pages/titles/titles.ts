@@ -36,14 +36,14 @@ export class TitlesPage {
     this.getTags(id)
   }
 
-  goToDetail(id : number){
-    this.navCtrl.push(DetailPage, id)
+  goToDetail(ley : any){
+    this.navCtrl.push(DetailPage, {data:ley})
   }
 
 
   getTags(id: number){
     this.http
-    .get('https://lex-app48.herokuapp.com/api/procedure/?format=json')
+    .get('https://lex-app48.herokuapp.com/api/law/?format=json')
     .subscribe((data: any) => {
       console.log(data)
       this.titles = data

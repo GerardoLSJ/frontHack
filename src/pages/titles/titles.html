@@ -24,7 +24,7 @@
     
         </ion-select>
       </div>
-  <ion-card *ngFor="let title of titles" (click)="goToDetail(title.id, title.title)">
+  <ion-card *ngFor="let title of titles" (click)="goToDetail(title)">
       <ion-card-header>
         <h3>
           <b>{{title.title}}</b>
