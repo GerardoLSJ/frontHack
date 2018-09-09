@@ -82,7 +82,10 @@ export class TramitesPage {
   }
 
   detalle(proc){
-    this.navCtrl.push(TramiteDetailPage, {data:proc})
+    let copy = Object.assign({},proc)
+    copy.steps = JSON.parse(copy.steps)
+    console.log(copy)
+    this.navCtrl.push(TramiteDetailPage, {data:copy})
   }
   filterBy(value){
     switch (value) {

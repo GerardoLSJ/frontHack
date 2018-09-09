@@ -13,7 +13,7 @@
 </ion-header>
 
 
-<ion-content no-padding>
+<!-- <ion-content no-padding>
 
     <h2>{{detail?.title }}</h2>
     <br>
@@ -24,9 +24,7 @@
   
     <h4>Requisitos</h4>
     <p>{{detail?.steps}}</p>
-    <!-- <ul>
-      <li *ngFor="let bullet of bullets">{{detail?.bullet }}</li>
-    </ul> -->
+
   
   
     <br>
@@ -34,4 +32,47 @@
     <p>{{detail?.notes}}</p>
     <a [href]="link">{{detail?.link }}</a>
   
-  </ion-content>
+  </ion-content> -->
+
+  <ion-content padding-left padding-right>
+  
+      <h1 padding-left>        {{detail?.title}}  </h1>
+        <h6 padding-left>Pasos</h6>
+        <div class = "cards">
+        <ion-card class="importantCard">
+          <ion-card-content>
+              <ion-card-title>
+                  ¡Importante!
+              </ion-card-title>
+          
+              <ion-list>
+                  <ion-item text-wrap *ngFor="let item of detail?.steps">
+                    <ion-label>{{item}}</ion-label>
+                    <ion-checkbox ></ion-checkbox>
+                  </ion-item>
+                </ion-list>
+
+          </ion-card-content>
+        </ion-card>
+      
+        <ion-card>
+            <ion-card-content>
+                <ion-card-title>
+                    Adicionalmente
+                </ion-card-title>
+                {{detail?.summary}}
+            </ion-card-content>
+          </ion-card>
+      
+      
+          <ion-card>
+              <ion-card-content>
+                  <ion-card-title>
+                      Referencia
+                  </ion-card-title>
+                  {{detail?.reference}}
+              </ion-card-content>
+            </ion-card>
+          </div>
+      
+      </ion-content>
