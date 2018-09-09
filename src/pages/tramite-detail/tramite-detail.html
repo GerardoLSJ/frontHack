@@ -35,14 +35,23 @@
   </ion-content> -->
 
   <ion-content padding-left padding-right>
-  
       <h1 padding-left>        {{detail?.title}}  </h1>
-        <h6 padding-left>Pasos</h6>
+
+      <ion-card>
+          <ion-card-content>
+              <ion-card-title>
+                  Descripción
+              </ion-card-title>
+              {{detail?.summary}}
+          </ion-card-content>
+        </ion-card>
+
+        <!-- <h6 padding-left>Pasos</h6> -->
         <div class = "cards">
         <ion-card class="importantCard">
           <ion-card-content>
               <ion-card-title>
-                  ¡Importante!
+                  Necesitas
               </ion-card-title>
           
               <ion-list>
@@ -55,14 +64,7 @@
           </ion-card-content>
         </ion-card>
       
-        <ion-card>
-            <ion-card-content>
-                <ion-card-title>
-                    Adicionalmente
-                </ion-card-title>
-                {{detail?.summary}}
-            </ion-card-content>
-          </ion-card>
+
       
       
           <ion-card>
